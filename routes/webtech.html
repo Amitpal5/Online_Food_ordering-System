@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+	<script>
+	function hiThere() {
+		alert('Hi there!');
+	}
+	function hov() {
+         var e = document.getElementById('hover');
+         e.style.display = 'none';
+      }
+	  var a = 0;
+      var b = 0;
+      var c = 0;
+      function changeBackground() {
+        var x = document.getElementById('bg');
+        bg.style.backgroundColor = 'rgb('+a+', '+b+', '+c+')';
+        a += 1;
+        b += a + 1;
+        c += b + 1;
+        if (a > 255) a = a - b;
+        if (b > 255) b = a;
+        if (c > 255) c = b;
+		
+      }
+	  function out() {
+        var e = document.getElementById('hover');
+        e.style.display = 'none';
+      }
+	  function red() {
+		alert('Trun Read function is working');
+	}
+	function myFunction() {
+  alert("The form was submitted");
+}
+function myinput() {
+  var x = document.getElementById("myInput").value;
+  document.getElementById("demo").innerHTML = "You wrote: " + x;
+}
+function myFun(x) {
+  x.style.background = "red";
+}
+function myplay() {
+  alert("The video has started to play");
+}
+	</script>
+</head>
+<body style="padding:20px;">
+	<button type="button" onclick="hiThere()" >Click me event</button >
+	<div id="hover" onmouseover="hov()"
+      style="background-color:green;height:200px;width:200px;">
+    </div> 
+	<div style="margin-top:20px;">
+	<input id="bg" onkeyup="changeBackground()"
+      placeholder="write something" style="color:#fff">
+	  </div>
+	  <div id="hover" onmouseout="out()"
+      style="background-color:green;height:200px;width:200px;">
+    </div>
+	<button type="button" onmouseenter=" red() ">Click me</button>
+	
+	 <form action="/action_page.php" onsubmit="myFunction()">
+  Enter name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+<div class="oninput" style="margin-top:20px;">
+<input type="text" id="myInput" oninput="myinput()">
+
+<p id="demo"></p>
+</div>
+
+<div class="onfocus" style="margin-top:20px;">
+
+Enter your name: <input type="text" onfocus="myFun(this)">
+
+
+
+</div>
+<div class="onplayevent" style="margin-top:20px;">
+<video controls onplay="myplay()">
+  <source src="https://www.youtube.com/watch?v=lWL8IWypfY0" type="video/mp4">
+ 
+</video>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
